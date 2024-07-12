@@ -617,9 +617,6 @@ markview.commands = {
 	enableAll = function ()
 		markview.state.enable = true;
 
-		vim.o.conceallevel = 2;
-		vim.o.concealcursor = "n";
-
 		for _, buf in ipairs(markview.attached_buffers) do
 			local parsed_content = markview.parser.init(buf);
 			local windows = markview.find_attached_wins(buffer);
